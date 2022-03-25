@@ -18,11 +18,11 @@ module Reflex.Gloss
   , GlossApp )
   where
 
-import           Control.Monad.Fix      (MonadFix)
+import           Control.Monad.Fix                (MonadFix)
+import           Control.Monad.IO.Class           (liftIO)
 import           Control.Monad.Identity
-import           Control.Monad.IO.Class (liftIO)
-import           Data.Dependent.Sum (DSum ((:=>)))
-import           Data.IORef             (readIORef)
+import           Data.Dependent.Sum               (DSum ((:=>)))
+import           Data.IORef                       (readIORef)
 
 
 import           Graphics.Gloss                   (Color, Display, Picture)
@@ -30,7 +30,9 @@ import           Graphics.Gloss.Interface.IO.Game (playIO)
 import qualified Graphics.Gloss.Interface.IO.Game as G
 
 import           Reflex
-import           Reflex.Host.Class (newEventWithTriggerRef, runHostFrame, fireEvents)
+import           Reflex.Host.Class                (fireEvents,
+                                                   newEventWithTriggerRef,
+                                                   runHostFrame)
 
 -- | Synonym for a Gloss Event to prevent name clashes.
 type InputEvent = G.Event
