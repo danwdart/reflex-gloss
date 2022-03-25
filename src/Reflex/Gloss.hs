@@ -19,8 +19,8 @@ module Reflex.Gloss
   where
 
 import           Control.Monad.Fix                (MonadFix)
-import           Control.Monad.IO.Class           (liftIO)
 import           Control.Monad.Identity
+import           Control.Monad.IO.Class           (liftIO)
 import           Data.Dependent.Sum               (DSum ((:=>)))
 import           Data.IORef                       (readIORef)
 
